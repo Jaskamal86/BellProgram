@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="javascript/index.js"></script>
+    <title>Create Server Order</title>
+</head>
+  
+<body>
+    <h1>List of Servers</h1>
+    <h2> Server A - Price $10,000</h2>
+    <h2> Server B - Price $5000</h2>
+
+<label for="servers">Choose at least 1 server from the list:</label>	
+
+<form method="GET" onsubmit="return createOrder();"><br>
+  <input type="checkbox" id="firstServer" name="ServerA" value="firstServer">
+  <label for="firstServer"> Server A</label><br>
+  <input type="checkbox" id="secondServer" name="ServerB" value="secondServer">
+  <label for="secondServer"> Server B</label><br><br>
+
+  <button type="submit" name="Submit" onclick="createOrder()" >Submit</button>
+</form>
+
+<div id = "servers">
+</div>
+</body>
+</html>
