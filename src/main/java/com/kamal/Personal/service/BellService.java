@@ -12,19 +12,19 @@ public class BellService {
 	public static int SERVER_A_PRICE = 10000;
 	public static int SERVER_B_PRICE = 5000;
 	
-	public int submitOrder(String firstServer, String secondServer) {
+	public Integer submitOrder(int countA, int countB) {
 		
-		if (SERVER_A.equals(firstServer) && SERVER_B.equals(secondServer)) {
+		if (countA == 0 && countB != 0) {
 			
-			finalPrice = SERVER_A_PRICE + SERVER_B_PRICE;
+			finalPrice = SERVER_B_PRICE * countB;
 		
-		} else if (SERVER_A.equals(firstServer) && SERVER_A.equals(secondServer)) {
+		} else if (countA != 0 && countB == 0) {
 		
-			finalPrice = SERVER_A_PRICE * 2;
+			finalPrice = SERVER_A_PRICE * countA;
 		
-		} else if (SERVER_B.equals(firstServer) && SERVER_B.equals(secondServer)) {
+		} else if (countA != 0 && countB != 0) {
 		
-			finalPrice = SERVER_B_PRICE * 2;
+			finalPrice = SERVER_A_PRICE * countA + SERVER_B_PRICE * countB;
 		}
 		
 		return finalPrice;

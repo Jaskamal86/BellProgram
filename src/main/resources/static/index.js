@@ -1,12 +1,11 @@
   function createOrder(server1, server2){
-	  
 	  if(server1 == null && server2 ==null)
 	    {
 		throw new Error('Please select at least 1 server from the options');  
 	    }
         var xmlhttp = new XMLHttpRequest();
         var baseurl = "http://localhost:8080/server";
-        xmlhttp.open("GET",baseurl + "/order/SERVER_A/SERVER_A",true);
+        xmlhttp.open("GET",baseurl + "/order/"+server1+"/"+server2,true);
         xmlhttp.send();
         
         xmlhttp.onreadystatechange=(e)=>{
