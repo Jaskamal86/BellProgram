@@ -13,13 +13,13 @@
 
 <label for="servers">Choose at least 1 server from the list:</label>	
 
-<form method="GET" onsubmit="return createOrder();"><br>
-  <input type="checkbox" id="firstServer" name="ServerA" value="firstServer">
+<form>
+  <input type="checkbox" id="firstServer" name="ServerA" value="SERVER_A">
   <label for="firstServer"> Server A</label><br>
-  <input type="checkbox" id="secondServer" name="ServerB" value="secondServer">
+  <input type="checkbox" id="secondServer" name="ServerB" value="SERVER_B">
   <label for="secondServer"> Server B</label><br><br>
 
-  <button type="submit" name="Submit" onclick="createOrder()" >Submit</button>
+  <button type="submit" onclick="createOrder(document.getElementById('firstServer').value, document.getElementById('secondServer').value)">Submit</button>
 </form>
 
 <div id = "servers">
